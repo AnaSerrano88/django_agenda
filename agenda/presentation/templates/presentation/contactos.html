@@ -1,0 +1,20 @@
+{% extends 'presentation/base.html'%}
+
+{% block title%}Agregar Nuevo Contacto{% endblock %}
+
+{% block content %}
+<br>
+<div class="row">
+    <div class="col-sm-5"></div>
+    <div class="col-sm-2">
+        <form  class="form-horizontal text-center text-success" role="form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <table>
+                {{ form.as_p }}
+            </table>
+             <button type="submit" class="btn btn-primary">Nuevo Contacto</button>    
+        </form>
+    </div>
+    <div class="col-sm-5"></div>
+</div>
+{% endblock%}

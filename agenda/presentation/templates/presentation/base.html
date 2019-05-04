@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title%}{% endblock %}</title>
+    {% load static %}
+    <script src="{% static 'presentation/vendor/jquery-3.4.0.js' %}"></script>
+    <!-- JavaScript -->
+    <script src="{% static 'presentation/js/site.js' %}"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Tema opcional -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="{% static 'presentation/css/site.css' %}">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script> -->
+     <link rel="icon" type="image/png" href="{% static 'presentation/img/matrix.jpg' %}" />
+    {% block styles %}{% endblock %}
+</head>
+<body>
+    <br>
+        <h1 class="text-center">Mis Contactos</h1>
+    <br>
+        <nav class="nav justify-content-center">
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'home' %}"><h4 class="font-weight-bold">Home</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'agenda' %}"><h4 class="font-weight-bold">Contactos</h4></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="{% url 'newcontacto' %}"><h4 class="font-weight-bold">Nuevo Contacto</h4></a>
+            </li>
+    </nav>
+    {% block content %}{% endblock %}
+    
+    {% block scripts %}{% endblock %}
+</body>
+</html>
